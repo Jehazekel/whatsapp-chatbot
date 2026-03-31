@@ -8,6 +8,12 @@ app.use(bodyParser.json());
 
 const token = process.env.WHATSAPP_TOKEN;
 
+app.get('/', (req, res) => {
+ 
+  res.status(200).send('Welcome to the WhatsApp Chatbot!');
+  
+});
+
 app.get('/webhook', (req, res) => {
   const mode = req.query['hub.mode'];
   const challenge = req.query['hub.challenge'];
